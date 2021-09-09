@@ -3,10 +3,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 const photo = require('./routers/FileUploadRoutes');
-const { config } = require('dotenv');
-
+require('dotenv').config();
 const app = express();
-config();
 const uri = process.env.DB_URI;
 mongoose.connect(uri, {
   useNewUrlParser: true,
