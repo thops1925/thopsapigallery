@@ -1,12 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 const photo = require('./routers/FileUploadRoutes');
-require('dotenv').config();
 const app = express();
-const uri = process.env.DB_URI;
-mongoose.connect(uri, {
+mongoose.connect(process.env.API, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
