@@ -12,9 +12,9 @@ mongoose.connect(process.env.API, {
 mongoose.connection.once('open', () => {
   console.log('open connection');
 });
-
+const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 app.use('/upload', express.static(path.join(__dirname, 'upload')));
 app.use('/api', photo.routes);
-app.listen(5000 || process.env.PORT, () => console.log('connected'));
+app.listen(port, () => console.log('connected'));
