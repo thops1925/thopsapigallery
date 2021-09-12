@@ -7,7 +7,6 @@ const {
   getallMultipleFiles,
 } = require('../controller/fileController');
 const router = express.Router();
-// const image = require('../model/Album');
 
 router.post('/single', Upload.single('image'), singleFileUpload);
 router.post('/multiple', Upload.array('images'), multipleFile);
